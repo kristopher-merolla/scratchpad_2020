@@ -95,6 +95,8 @@ def add(x,y):
     z = x + y
     return z
 
+def makeStuff(name='', time=0): # set default when declaring a param
+
 new_num = add(4,5)
 print(new_num)
 
@@ -173,6 +175,9 @@ people.append("Jon")
 people.pop()
 people.pop(1)
 
+arr = [1,3,5,7]
+arr[0], arr[1] = arr[1], arr[0] # swapping elements in a list
+
 ## Dictionary
 new_dict = {}
 new_employee = {'name':'Kristopher Merolla','position':'Full Stack Software Engineer'}
@@ -182,3 +187,4 @@ type(val)
 len('string')
 str(42)
 int("42")
+
