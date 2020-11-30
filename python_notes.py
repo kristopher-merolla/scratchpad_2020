@@ -60,6 +60,9 @@ print("string here! fancy")
 first_name = "Kristohper"
 print("my name is " + first_name)
 
+# Printing can be strung together with commas as well
+print("my name is",first_name)
+
 ### F-Strings (Literal String Interpolation)
 #### Python 3.6 introduced f-strings for string interpolation
 print(f"My name is {first_name}")
@@ -99,6 +102,9 @@ def makeStuff(name='', time=0): # set default when declaring a param
 
 new_num = add(4,5)
 print(new_num)
+
+def anotherFunction(*args,**kwargs): # arguments and key-word arguments
+    print(*args)
 
 ## Classes
 class EmptyClass:
@@ -178,9 +184,16 @@ people.pop(1)
 arr = [1,3,5,7]
 arr[0], arr[1] = arr[1], arr[0] # swapping elements in a list
 
+# Tuples
+new_tuple = (1,'cat',15,21) # immutable
+
 ## Dictionary
-new_dict = {}
+new_dict = {} # very fast lookups
 new_employee = {'name':'Kristopher Merolla','position':'Full Stack Software Engineer'}
+
+# Set
+x = set() # very fast lookups
+y = {5,4,2,2,6}
 
 ## Common Functions
 type(val)
