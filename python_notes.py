@@ -107,8 +107,22 @@ def anotherFunction(*args,**kwargs): # arguments and key-word arguments
     print(*args)
 
 ## Classes
-class EmptyClass:
-    pass
+class User:
+    def __init__(self):
+        self.name = "Kristopher" # classes have attributes
+        self.role = "Software Engineer"
+
+person = User() # to make a new instance of the class
+print(person.name,person.role) # attributes accessed
+
+class User:
+    def __init__(self, name, role, status): # initiation can be done with variables
+        self.name = name
+        self.role = role
+        self.status = status
+
+candidate = User("Kristopher","Software Engineer","Hired")
+print(candidate.name)
 
 ## Conditionals and Loops
 if x < 5:
