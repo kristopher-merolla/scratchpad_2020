@@ -72,8 +72,25 @@ class SList:
         previous.next = None
         return val
 
-    def remove_value(self, value):
-        pass
+    def remove_value(self, val): # remove first node with the given value
+        if self.head == None:
+            return self
+        if self.head.value == val: # remove from front if the first node matches
+            self.remove_from_front()
+            return self
+        runner = self.head
+        previous = None
+        while (runner.next != None):
+            if runner.value == val: # if the value matches our text value
+                previous.next = runner.next
+                runner.next = None
+                return self 
+            previous = runner
+            runner = runner.next
+        if runner.value == val:
+            self.remove_from_back()
+            return self
+        return self
 
     def insert_at(self, value, n):
         pass
