@@ -39,7 +39,7 @@ class SList:
         runner = self.head
         while (runner != None):
             print(runner.value)
-        runner = runner.next
+            runner = runner.next
         return self
 
     def add_to_back(self, val): # add an value to the end of a list
@@ -67,7 +67,6 @@ class SList:
 
 # New list example
 my_list = SList() # create the list
-
 my_list.add_to_front("d") # "d"
 my_list.add_to_front("c") # "c->d"
 my_list.add_to_front("b") # "b->c->d"
