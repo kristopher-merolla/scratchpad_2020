@@ -35,6 +35,7 @@ pip3 show {{package_name}}
 pip3 search Flask
 ## example: pip3 search Flask
 
+#################################
 
 # Python Shell Commands
 
@@ -52,6 +53,7 @@ touch {{file_name}}.py
 python {{file_mame}}.py
 ## example: python hello_world.py
 
+#################################
 
 # Printing in Python
 
@@ -76,6 +78,7 @@ hello_world = "Hello %s" % "World"
 python_view = "I love Python %d" % 3 
 print(hello_world, python_view)
 
+#################################
 
 # String Methods
 
@@ -90,6 +93,7 @@ string.find(substr)
 string.isalnum()
 string.endswith(substr)
 
+#################################
 
 # Python Syntax Basics
 
@@ -116,13 +120,18 @@ person = User() # to make a new instance of the class
 print(person.name,person.role) # attributes accessed
 
 class User:
-    def __init__(self, name, role, status): # initiation can be done with variables
+    def __init__(self, name, role, status): # called when object is constructed
         self.name = name
         self.role = role
         self.status = status
+        self.account_balance = 0
+
+    def deposit_funds(self, amount): # classes have methods
+        self.account_balance += amount
 
 candidate = User("Kristopher","Software Engineer","Hired")
 print(candidate.name)
+candidate.deposit_funds(500) # print(candidate.account_balance) -> 500
 
 ## Conditionals and Loops
 if x < 5:
@@ -174,7 +183,6 @@ for val in new_dict.values():
 for key, val in new_dict.items():
      print(key, " = ", val)
 
-
 ## Boolean
 can_code = True
 is_sleepy = False
@@ -198,14 +206,14 @@ people.pop(1)
 arr = [1,3,5,7]
 arr[0], arr[1] = arr[1], arr[0] # swapping elements in a list
 
-# Tuples
+## Tuples
 new_tuple = (1,'cat',15,21) # immutable
 
 ## Dictionary
 new_dict = {} # very fast lookups
 new_employee = {'name':'Kristopher Merolla','position':'Full Stack Software Engineer'}
 
-# Set
+## Set
 x = set() # very fast lookups
 y = {5,4,2,2,6}
 
