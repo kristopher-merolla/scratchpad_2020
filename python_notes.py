@@ -107,6 +107,9 @@ def makeStuff(name='', time=0): # set default when declaring a param
 new_num = add(4,5)
 print(new_num)
 
+def funInFunction(arg, *args): # the asterisk is called the splat operator
+    print(arg," and ",*args) # *args appear as a tuple
+
 def anotherFunction(*args,**kwargs): # arguments and key-word arguments
     print(*args)
 
