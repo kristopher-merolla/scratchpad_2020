@@ -223,3 +223,80 @@ len('string')
 str(42)
 int("42")
 
+#################################
+
+# Modules
+
+## Python standard library of modules: https://docs.python.org/3.9/library/index.html
+
+## Modules are Python files (.py) containing a set of functions, used in code via the 'import' command
+import moduleNameHere
+
+### Example -> urllib.request module enables reading of request data from a URL
+import urllib.request
+response = urllib.request.urlopen("http://www.google.com")
+html = response.read()
+print(html)
+
+## Modules can be created and imported into other Python files as needed
+### Example -> create a file like "calcs.py" and import it into user
+import calcs # import the path, if in same directory write this way
+print(calcs.rate(5,10,15,20))
+
+#################################
+
+# Packages
+
+# A package is a collection of modules and are similarly imported (two ways)
+import my_mods.test_mod
+from my_mods import test_mod
+
+## Example hierarchy
+my_project
+     |_____ python_stuff.py
+     |_____ my_mods
+               |_____ __init__.py # init can be used to restrict what mods are available
+               |_____ test_mod.py
+               |_____ another_mod.py
+               |_____ final_mod.py
+
+#################################
+
+# Test Driven Development (TDD)
+
+## Python Test cases methods: https://docs.python.org/3.9/library/unittest.html#test-cases
+
+## Unlike the traditional development cycle of design -> build -> test -> repeat,
+## TDD has the writing of a test to fail before then writing code to pass the test,
+## code can then be refactored as needed to improve overall functionality
+
+## Python testing framework
+import unittest # import the python testing framework
+
+def isEven(n): ## Example function isEven which is tested
+    if n % 2 == 0:
+       return True
+    else:
+       return False
+
+class IsEvenTests(unittest.TestCase): ## Unit test (test_even.py)
+    # each method in this class is a test to be run
+    def testTwo(self):
+        self.assertEqual(isEven(2), True)
+        # another way to write above is
+        self.assertTrue(isEven(2))
+    def testThree(self):
+        self.assertEqual(isEven(3), False)
+        # another way to write above is
+        self.assertFalse(isEven(3))
+    # any task you want run before any method above is executed, put them in the setUp method
+    def setUp(self):
+        # add the setUp tasks
+        print("running setUp")
+    # any task you want run after the tests are executed, put them in the tearDown method
+    def tearDown(self):
+        # add the tearDown tasks
+        print("running tearDown tasks")
+if __name__ == '__main__':
+    unittest.main() # this runs our tests
+
