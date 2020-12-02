@@ -53,11 +53,24 @@ class SList:
         runner.next = new_node
         return self
 
-    def remove_from_front(self): # remove the first node and return it's value
-        pass
+    def remove_from_front(self): # remove the first item from the list
+        if self.head == None:
+            return self
+        val = self.head.value
+        self.head = self.head.next
+        return val
 
     def remove_from_back(self):
-        pass
+        if self.head == None:
+            return self
+        runner = self.head
+        previous = None
+        while (runner.next != None):
+            previous = runner
+            runner = runner.next
+        val = runner.value
+        previous.next = None
+        return val
 
     def remove_value(self, value):
         pass
@@ -67,8 +80,24 @@ class SList:
 
 # New list example
 my_list = SList() # create the list
+
+# Testing the linked list functions
+print("------")
 my_list.add_to_front("d") # "d"
 my_list.add_to_front("c") # "c->d"
 my_list.add_to_front("b") # "b->c->d"
 my_list.add_to_front("a") # populate list, final order "a->b->c->d"
 my_list.print_values()
+print("------")
+my_list.remove_from_front() # remove the "a" from the front leaving "b->c->d"
+my_list.print_values()
+print("------")
+my_list.remove_from_back() # remove the "d" from the end leaving "b->c"
+my_list.print_values()
+print("------")
+my_list.remove_value("c") # removes the "c" leaving "b"
+my_list.print_values()
+print("------")
+my_list.insert_at("x",1)
+my_list.print_values()
+print("------")
