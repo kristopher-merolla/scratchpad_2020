@@ -308,3 +308,33 @@ class IsEvenTests(unittest.TestCase): ## Unit test (test_even.py)
 if __name__ == '__main__':
     unittest.main() # this runs our tests
 
+#################################
+
+# Inheritance
+
+# A relationship between classes, defining a new class based on another class
+
+# Example
+class BankAccount: # the generic class of BankAccount
+    def __init__(self, int_rate, balance=0):
+        self.int_rate = int_rate
+        self.balance = balance
+    
+    def withdraw(self, amount):
+    	if (self.balance - amount) > 0:
+    	    self.balance -= amount
+        else:
+    	    print("Lacking in funds...")
+    	return self
+
+class RetirementAccount(BankAccount): # passing in the BankAccount class into our RetirementAccount class
+    def __init__(self, int_rate, is_roth, balance=0):
+    	super().__init__(int_rate, balance)	# we can use the super() function to call methods from BankAcount
+        self.is_roth = is_roth
+
+    def withdraw(self, amount, is_early):
+    	if is_early:
+    	    amount = amount * 1.10
+    	super().withdraw(amount) # reduce repetitive code using super()
+    	return self
+
