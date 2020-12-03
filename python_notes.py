@@ -338,3 +338,17 @@ class RetirementAccount(BankAccount): # passing in the BankAccount class into ou
     	super().withdraw(amount) # reduce repetitive code using super()
     	return self
 
+# Overriding
+
+# With OOP, a child can behave differently than the parent by overriding the parent function
+class Parent:
+    def method_a(self):
+        print("invoking Parent method_a")
+class Child(Parent):
+    def method_a(self):
+        print("invoking Child method_a")
+dad = Parent()
+daughter = Child()
+dad.method_a()
+daughter.method_a() # This calls the child method, not the parent one
+
