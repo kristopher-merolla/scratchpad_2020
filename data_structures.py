@@ -92,8 +92,26 @@ class SList:
             return self
         return self
 
-    def insert_at(self, value, n):
-        pass
+    def insert_at(self, val, n): # considering n = 0 as the begining to the list
+        if (self.head == None) or (n <= 0): # if the list is empty, let's create a new node
+            self.add_to_front(val)
+            return self
+        runner = self.head
+        previous = None
+        counter = 0
+        while (runner.next != None):
+            if counter == n:
+                new_node = SLNode(val)
+                new_node.next = runner
+                previous.next = new_node
+                return self
+            previous = runner
+            runner = runner.next
+            counter += 1
+        
+        self.add_to_back(val) # if n < length of list, add to back
+        return self
+
 
 # New list example
 my_list = SList() # create the list
@@ -115,6 +133,10 @@ print("------")
 my_list.remove_value("c") # removes the "c" leaving "b"
 my_list.print_values()
 print("------")
-my_list.insert_at("x",1)
+print("reseting the list for insert test")
+print("------")
+my_list = SList()
+my_list.add_to_front("d").add_to_front("c").add_to_front("b").add_to_front("a")
+my_list.insert_at("x",2)
 my_list.print_values()
 print("------")
