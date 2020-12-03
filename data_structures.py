@@ -14,6 +14,8 @@
 # O(N^2)
 # O(N^3)
 
+####################################
+
 # Linked List
 # a->b->c->d
 
@@ -140,3 +142,47 @@ my_list.add_to_front("d").add_to_front("c").add_to_front("b").add_to_front("a")
 my_list.insert_at("x",2)
 my_list.print_values()
 print("------")
+
+####################################
+
+# Doubly-Linked list
+
+# Just like a normal linked list, but you can also go back in addition to next
+
+####################################
+
+# Hash Table
+
+# Converting values into a short lookup, allow for faster / easier finding of data
+
+# https://en.wikipedia.org/wiki/Hash_table
+
+####################################
+
+# Stack
+
+# LIFO (Last in first out)
+
+# https://www.cs.cmu.edu/~adamchik/15-121/lectures/Stacks%20and%20Queues/
+
+####################################
+
+# Queue
+
+# FIFO (First in first out)
+
+####################################
+
+# Binary Search Tree
+
+# Way to organize information
+
+# https://en.wikipedia.org/wiki/Binary_search_tree
+
+####################################
+
+# Trie
+
+# 
+
+####################################
