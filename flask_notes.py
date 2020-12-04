@@ -5,10 +5,13 @@
 # Flask can be used to make a web server and is quick and easy to setup
 
 # Installation
-
 pip3 install Flask
 
 # Will be using a virtual env so do pip3 install virtualenv https://pypi.org/project/virtualenv/
+
+##########################
+## Getting Flask to Run ##
+##########################
 
 # Start up the virtual env
 virtualenv flask
