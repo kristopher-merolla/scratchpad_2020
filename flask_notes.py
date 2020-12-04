@@ -101,3 +101,20 @@ def index():
 
 # Static Files (images, css, etc)
 
+# Things to remember:
+
+# All static content must go inside of the static folder
+
+# The folder MUST be named static
+
+# In order to reference the static content start at the relative path after static
+# (static is from the root(also known as / or the same level as your server.py file
+    # For example, if you have styles.css file in a directory called css in your static 
+    # folder your href would read "href='css/styles.css'"
+
+# Linking a css style sheet:
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_styles.css') }}">
+# Linking a javascript file:
+<script type="text/javascript" src="{{ url_for('static', filename='js/my_script.js') }}"></script>
+# Linking an image:
+<img src="{{ url_for('static', filename='img/my_img.png') }}">
