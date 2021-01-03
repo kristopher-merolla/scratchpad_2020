@@ -118,3 +118,24 @@ def index():
 <script type="text/javascript" src="{{ url_for('static', filename='js/my_script.js') }}"></script>
 # Linking an image:
 <img src="{{ url_for('static', filename='img/my_img.png') }}">
+
+
+##########################
+
+# Message Flashing
+# https://flask.palletsprojects.com/en/1.0.x/patterns/flashing/#flashing-with-categories
+
+## Example Error Messages
+from flask import flash
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] != 'admin' or \
+                request.form['password'] != 'secret':
+            error = 'Invalid credentials'
+        else:
+            flash('You were successfully logged in')
+            return redirect(url_for('index'))
+    return render_template('login.html', error=error)

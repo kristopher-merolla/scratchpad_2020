@@ -352,3 +352,14 @@ daughter = Child()
 dad.method_a()
 daughter.method_a() # This calls the child method, not the parent one
 
+########################
+
+# Regex
+
+## Matching an email
+import re
+
+EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
+
+EMAIL_REGEX.match("string")
+

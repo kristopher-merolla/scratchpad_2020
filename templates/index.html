@@ -5,8 +5,16 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/my_script.js') }}"></script>
   </head>
   <body>
-      <h1>Hello World!</h1>
-    <p>My name is {{name}}</p>
-    <img src="{{ url_for('static', filename='img/wow_dwarf.png') }}" class="medium_image">
+    <!-- <p>My name is {{name}}</p> -->
+    <!-- <img src="{{ url_for('static', filename='img/wow_dwarf.png') }}" class="medium_image"> -->
+
+    <h1>Index (Root) Page</h1>
+    <h2>Create Your User:</h2>
+    <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+    <form action='/users' method='post'>
+        Name: <input type='text' name='name'>
+        Email: <input type='text' name='email'>
+        <input type='submit' value='create user'>
+    </form>
   </body>
 </html>
