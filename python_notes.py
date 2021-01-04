@@ -5,7 +5,7 @@
 # Python style guide: https://www.python.org/dev/peps/pep-0008/
 
 # Creating a python virtual environment
-python3 -m venv py3Env 
+python3 -m venv py3Env
 
 ## Activate the envitonment (cd py3Env)
 source py3Env/bin/activate
@@ -362,4 +362,5 @@ import re
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
 EMAIL_REGEX.match("string")
+
 
